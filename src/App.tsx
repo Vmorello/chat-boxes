@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ChatBox from './component/chatBox'
+import {scriptProps, getScript} from './component/script'
+// import {parse, dialogInfotype} from './component/chatUtil'
 
 function App() {
+
+  const [speechIndex, setSpeechIndex] = useState(0)
+  const onEnd = () => {setSpeechIndex(previous => previous +1 )}
+
+  const script: scriptProps[] = getScript()
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"/>
+
+      <ChatBox dialogInfo={script[speechIndex].dialogInfo} 
+                speed={script[speechIndex].speed} 
+                xPosition={script[speechIndex].xPosition} 
+                yPosition={script[speechIndex].yPosition} 
+                speakerName={script[speechIndex].speakerName}
+         onEnd={onEnd}/>
+
+    
     </div>
   );
 }

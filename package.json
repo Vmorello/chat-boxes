@@ -10,6 +10,8 @@
     "@types/node": "^16.18.87",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
+    "animejs": "^3.2.2",
+    "framer-motion": "^11.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -17,9 +19,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "tailwind-b": "npx tailwindcss -i ./src/index.css -o ./src/output.css",
+    "tailwind-w": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/animejs": "^3.1.12",
+    "tailwindcss": "^3.4.1"
   }
 }
