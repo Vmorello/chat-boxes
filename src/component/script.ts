@@ -32,9 +32,9 @@ export function getScript():scriptProps[] {
 
   const slow_speed =100
 
-  const loxodon = {speed:64,x:10,y:200}
-  const thonak = {speed:50,x:200,y:420}
-  const quiznos = {speed:20,x:80,y:720}
+  const loxodon = {speed:64,x:100,y:200}
+  const thonak = {speed:50,x:100,y:420}
+  const quiznos = {speed:20,x:100,y:720}
   const  other = {speed:50,x:100,y:220}
 
   
